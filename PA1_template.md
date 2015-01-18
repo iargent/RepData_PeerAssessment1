@@ -1,5 +1,10 @@
-# Reproducible Research: Peer Assessment 1
-
+---
+title: 'Reproducible Research: Peer Assessment 1'
+output:
+  html_document:
+    fig_caption: yes
+    keep_md: yes
+---
 
 ## Loading and preprocessing the data
 
@@ -20,7 +25,7 @@ steps_by_date<-aggregate(steps ~ date, dat, sum)
 hist(steps_by_date$steps)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 Work out the mean number of steps per day:
 
@@ -52,7 +57,7 @@ mean_steps_by_interval<-aggregate(steps ~ interval, dat, mean)
 plot(mean_steps_by_interval$interval, mean_steps_by_interval$steps, type="l")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -85,7 +90,7 @@ steps_by_date2<-aggregate(steps ~ date, dat2, sum)
 hist(steps_by_date2$steps)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-8-1.png) 
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
 
 
 Work out the mean number of steps per day:
@@ -150,4 +155,4 @@ library(lattice)
 xyplot( steps ~ interval | day.type, mean_steps_by_interval2, layout=c(1,2), type="l")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-15-1.png) 
+![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15-1.png) 
